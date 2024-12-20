@@ -8,6 +8,7 @@ Route::group([
 ], function () {
     Route::get('gas-stations', [GasStationController::class, 'index']);
     Route::get('gas-stations/{name}', [GasStationController::class, 'show']);
+    Route::put('gas-stations/{name}', [GasStationController::class, 'update']);
     Route::patch('gas-stations/{name}', [GasStationController::class, 'update']);
 });
 

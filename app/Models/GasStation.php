@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class GasStation extends Model
 {
@@ -20,4 +21,9 @@ class GasStation extends Model
         'long' => 'double',
         'is_open' => 'boolean',
     ];
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class, 'gas_station_id', 'gas_station_id');
+    }
 }
