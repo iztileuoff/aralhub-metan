@@ -15,7 +15,7 @@ class CommentController extends Controller
     public function index(CommentRequest $request)
     {
         $comments = Comment::where('gas_station_id', $request->input('gas_station_id'))
-            ->orderBy('desc', 'id')
+            ->orderBy('id', 'desc')
             ->take(10)
             ->get();
 
