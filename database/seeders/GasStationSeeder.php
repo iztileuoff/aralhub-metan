@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 
 class GasStationSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $contents = File::get(storage_path('app/gasStations.json'));
         $data = json_decode(json: $contents, associative: true);

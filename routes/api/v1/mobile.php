@@ -2,4 +2,9 @@
 
 use App\Http\Controllers\Api\V1\Mobile\GasStationController;
 
-Route::apiResource('gas-stations', GasStationController::class);
+Route::group([
+    'prefix'     => 'telegram',
+    'as'         => 'telegram.',
+], function () {
+    Route::apiResource('gas-stations', GasStationController::class);
+});
