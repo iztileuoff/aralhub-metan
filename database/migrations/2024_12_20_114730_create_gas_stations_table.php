@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('gas_station_id');
             $table->string('name')->nullable();
-            $table->string('title')->nullable();
             $table->decimal('lat', 12, 6)->nullable();
             $table->decimal('long', 12, 6)->nullable();
             $table->boolean('is_open')->default(false);

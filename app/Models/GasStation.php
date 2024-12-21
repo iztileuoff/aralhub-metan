@@ -10,7 +10,6 @@ class GasStation extends Model
     protected $fillable = [
         'gas_station_id',
         'name',
-        'title',
         'lat',
         'long',
         'is_open',
