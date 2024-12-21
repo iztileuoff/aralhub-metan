@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Api\V1\Mobile;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateGasStationRequest;
-use App\Http\Resources\GasStationResource;
+use App\Http\Resources\Mobile\GasStationResource;
 use App\Models\GasStation;
 use Illuminate\Http\Request;
 
