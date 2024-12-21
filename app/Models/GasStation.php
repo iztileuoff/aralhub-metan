@@ -14,6 +14,7 @@ class GasStation extends Model
         'long',
         'is_open',
         'personal_number',
+        'close_time',
     ];
 
     protected $casts = [
@@ -21,6 +22,7 @@ class GasStation extends Model
         'long' => 'double',
         'is_open' => 'boolean',
         'personal_number' => 'string',
+        'close_time' => 'datetime',
     ];
 
     public function comments(): HasMany

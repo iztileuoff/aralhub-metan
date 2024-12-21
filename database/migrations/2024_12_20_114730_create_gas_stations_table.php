@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->decimal('lat', 12, 6)->nullable();
             $table->decimal('long', 12, 6)->nullable();
             $table->boolean('is_open')->default(false);
+            $table->time('close_time')->nullable();
             $table->string('personal_number')->nullable();
             $table->timestamps();
         });

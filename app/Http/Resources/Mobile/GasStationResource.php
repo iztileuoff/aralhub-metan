@@ -14,6 +14,7 @@ class GasStationResource extends JsonResource
         return [
             'id' => $this->gas_station_id,
             'name' => $this->name,
+            'close_time' => $this->close_time?->format('H:i'),
             'lat' => $this->lat,
             'long' => $this->long,
             'is_open' => $this->is_open,
