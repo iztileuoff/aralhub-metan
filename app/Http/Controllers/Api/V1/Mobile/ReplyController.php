@@ -8,6 +8,7 @@ use App\Http\Resources\ReplyResource;
 use App\Models\GasStation;
 use App\Models\Reply;
 use Illuminate\Support\Facades\Log;
+use SergiX44\Nutgram\Nutgram;
 
 class ReplyController extends Controller
 {
@@ -36,6 +37,7 @@ class ReplyController extends Controller
         if ($reply->is_open != $gasStation->is_open) {
             $gasStationIsOpen = $gasStation->is_open ? "true" : "false";
             $replyIsOpen = $reply->is_open ? "true" : "false";
+            
             Log::channel('telegram')->info("{$gasStation->name} {$gasStation->personal_number} is_open:{$gasStationIsOpen}.\n{$reply->name} {$reply->phone} is_open:{$replyIsOpen} {$reply->created_at?->format('Y-m-d H:i:s')}");
         }
 
