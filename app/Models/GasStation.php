@@ -14,6 +14,7 @@ class GasStation extends Model
         'long',
         'is_open',
         'personal_number',
+        'open_time',
         'close_time',
     ];
 
@@ -22,6 +23,7 @@ class GasStation extends Model
         'long' => 'double',
         'is_open' => 'boolean',
         'personal_number' => 'string',
+        'open_time' => 'datetime',
         'close_time' => 'datetime',
     ];
 
