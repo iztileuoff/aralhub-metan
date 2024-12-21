@@ -34,17 +34,11 @@ class ReplyController extends Controller
         $gasStation = GasStation::where('gas_station_id', $reply->gas_station_id)->first();
 
         if ($reply->is_open != $gasStation->is_open) {
-            Log::channel('telegram')->info('Reply!', [
-                'gas_station' => [
-                    'name' => $gasStation->name,
-                    'personal_number' => $gasStation->personal_number,
-                    'is_open' => $gasStation->is_open,
-                ],
-                'reply' => [
-                    'name' => $reply->name,
-                    'phone' => $reply->phone,
-                    'is_open' => $reply->is_open,
-                ],
+            Log::channel('telegram')->info("{$gasStation->name} {$gasStation->personal_number} is_open:{$gasStation->is_open}", [
+                'name' => $reply->name,
+                'phone' => $reply->phone,
+                'is_open' => $reply->is_open,
+                'created_at' => $reply->created_at?->format('Y-m-d H:i:s'),
             ]);
         }
 
