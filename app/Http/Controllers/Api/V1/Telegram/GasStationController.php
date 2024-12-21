@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\V1\Telegram;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateGasStationRequest;
-use App\Http\Resources\GasStationResource;
+use App\Http\Resources\Telegram\GasStationResource;
 use App\Models\GasStation;
 use Illuminate\Http\Request;
 
