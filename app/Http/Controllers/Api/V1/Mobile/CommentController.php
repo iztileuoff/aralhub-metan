@@ -24,6 +24,22 @@ class CommentController extends Controller
 
     public function store(StoreCommentRequest $request)
     {
+        $validated = $request->validated();
+
+        $lastComment = Comment::where('gas_station_id', $request->input('gas_station_id'))
+            ->where('phone', $request->input('phone'))
+            ->first();
+
+        if ($lastComment ) {
+            $diff = now()->diffInMinutes($lastComment?->created_at);
+
+            if ($diff <= 60) {
+                return response()->json([
+                    "message" => "Вы можете отправить 1 сообщение в час",
+                ], 422);
+            }
+        }
+
         return new CommentResource(Comment::create($request->validated()));
     }
 }
