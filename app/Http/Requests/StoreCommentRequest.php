@@ -10,6 +10,7 @@ class StoreCommentRequest extends FormRequest
     {
         return [
             'text' => ['required', 'string', 'max:1000'],
+            'name' => ['required', 'string', 'max:256'],
             'phone' => ['required', 'string'],
             'gas_station_id' => ['required', 'exists:gas_stations,gas_station_id'],
         ];

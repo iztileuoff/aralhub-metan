@@ -10,6 +10,7 @@ return new class extends Migration {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->text('text');
+            $table->string('name')->nullable();
             $table->string('phone');
             $table->string('gas_station_id');
             $table->timestamps();
