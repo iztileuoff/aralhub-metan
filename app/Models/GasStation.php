@@ -14,12 +14,14 @@ class GasStation extends Model
         'lat',
         'long',
         'is_open',
+        'personal_number',
     ];
 
     protected $casts = [
         'lat' => 'double',
         'long' => 'double',
         'is_open' => 'boolean',
+        'personal_number' => 'string',
     ];
 
     public function comments(): HasMany

@@ -17,16 +17,16 @@ class GasStationController extends Controller
         return GasStationResource::collection($gasStations);
     }
 
-    public function show(string $name)
+    public function show(string $personal_number)
     {
-        $gasStation = GasStation::where('name', $name)->firstOrFail();
+        $gasStation = GasStation::where('personal_number', $personal_number)->firstOrFail();
 
         return new GasStationResource($gasStation);
     }
 
-    public function update(UpdateGasStationRequest $request, string $name)
+    public function update(UpdateGasStationRequest $request, string $personal_number)
     {
-        $gasStation = GasStation::where('name', $name)->firstOrFail();
+        $gasStation = GasStation::where('personal_number', $personal_number)->firstOrFail();
 
         $gasStation->update($request->validated());
 
