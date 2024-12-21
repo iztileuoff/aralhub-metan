@@ -12,7 +12,7 @@ class StoreReplyRequest extends FormRequest
             'is_open' => ['required', 'boolean'],
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string'],
-            'gas_station_id' => ['required', 'string'],
+            'gas_station_id' => ['required', 'string', 'exists:gas_stations,gas_station_id'],
         ];
     }
 
