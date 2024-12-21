@@ -41,6 +41,6 @@ class CommentController extends Controller
             }
         }
 
-        return new CommentResource(Comment::create($request->validated()));
+        return new CommentResource(Comment::create($validated));
     }
 }
