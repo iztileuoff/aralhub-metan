@@ -28,6 +28,7 @@ class CommentController extends Controller
 
         $lastComment = Comment::where('gas_station_id', $request->input('gas_station_id'))
             ->where('phone', $request->input('phone'))
+            ->orderBy('id', 'desc')
             ->first();
 
         if ($lastComment ) {
