@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->time('open_time')->nullable();
             $table->time('close_time')->nullable();
             $table->string('personal_number')->nullable();
+            $table->string('telegram_name')->nullable();
+            $table->string('telegram_phone')->nullable();
             $table->timestamps();
         });
     }

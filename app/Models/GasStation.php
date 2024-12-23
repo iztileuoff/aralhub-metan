@@ -21,6 +21,8 @@ class GasStation extends Model implements HasMedia
         'personal_number',
         'open_time',
         'close_time',
+        'telegram_name',
+        'telegram_phone',
     ];
 
     protected $casts = [
@@ -29,6 +31,8 @@ class GasStation extends Model implements HasMedia
         'is_active' => 'boolean',
         'is_open' => 'boolean',
         'personal_number' => 'string',
+        'telegram_name' => 'string',
+        'telegram_phone' => 'string',
         'open_time' => 'datetime',
         'close_time' => 'datetime',
     ];
