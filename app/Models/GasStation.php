@@ -12,6 +12,7 @@ class GasStation extends Model
         'name',
         'lat',
         'long',
+        'is_active',
         'is_open',
         'personal_number',
         'open_time',
@@ -21,6 +22,7 @@ class GasStation extends Model
     protected $casts = [
         'lat' => 'double',
         'long' => 'double',
+        'is_active' => 'boolean',
         'is_open' => 'boolean',
         'personal_number' => 'string',
         'open_time' => 'datetime',

@@ -18,6 +18,7 @@ class GasStationResource extends JsonResource
             'close_time' => $this->close_time?->format('H:i'),
             'lat' => $this->lat,
             'long' => $this->long,
+            'is_active' => $this->is_active,
             'is_open' => $this->is_open,
         ];
     }

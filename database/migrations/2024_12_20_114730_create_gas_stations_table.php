@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('name')->nullable();
             $table->decimal('lat', 12, 6)->nullable();
             $table->decimal('long', 12, 6)->nullable();
+            $table->boolean('is_active')->default(false);
             $table->boolean('is_open')->default(false);
             $table->time('open_time')->nullable();
             $table->time('close_time')->nullable();
