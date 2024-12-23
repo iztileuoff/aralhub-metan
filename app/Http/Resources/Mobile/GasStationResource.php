@@ -20,6 +20,7 @@ class GasStationResource extends JsonResource
             'long' => $this->long,
             'is_active' => $this->is_active,
             'is_open' => $this->is_open,
+            'image_url' => $this->getFirstMediaUrl('images'),
         ];
     }
 }
