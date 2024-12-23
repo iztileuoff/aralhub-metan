@@ -13,11 +13,19 @@ class UpdateGasStationRequest extends FormRequest
             'is_open' => ['boolean'],
             'open_time' => ['date_format:H:i'],
             'close_time' => ['date_format:H:i'],
+            'is_active' => ['boolean'],
         ];
     }
 
     public function authorize(): bool
     {
         return true;
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'is_active' => true,
+        ]);
     }
 }
