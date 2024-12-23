@@ -23,7 +23,7 @@ class GasStationImageController extends Controller
 
         $gasStation->clearMediaCollection('images');
 
-        $gasStation->addMediaFromRequest('file')->toMediaCollection('images');
+        $gasStation->addMediaFromRequest('image_file')->toMediaCollection('images');
 
         return new GasStationResource($gasStation);
     }
