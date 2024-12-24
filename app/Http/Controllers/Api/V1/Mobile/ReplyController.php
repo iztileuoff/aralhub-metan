@@ -37,7 +37,10 @@ class ReplyController extends Controller
         if ($reply->is_open != $gasStation->is_open) {
             $gasStationIsOpen = $gasStation->is_open ? "true" : "false";
             $replyIsOpen = $reply->is_open ? "true" : "false";
-            
+
+            $gasStation->is_open = $reply->is_open;
+            $gasStation->save();
+
             Log::channel('telegram')->info("{$gasStation->name} {$gasStation->personal_number} is_open:{$gasStationIsOpen}.\n{$reply->name} {$reply->phone} is_open:{$replyIsOpen} {$reply->created_at?->format('Y-m-d H:i:s')}");
         }
 
