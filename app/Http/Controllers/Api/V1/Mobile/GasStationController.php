@@ -11,7 +11,9 @@ class GasStationController extends Controller
 {
     public function index(Request $request)
     {
-        $gasStations = GasStation::orderBy('is_open', 'desc')->get();
+        $gasStations = GasStation::orderBy('is_active', 'desc')
+            ->orderBy('is_open', 'desc')
+            ->get();
 
         return GasStationResource::collection($gasStations);
     }
