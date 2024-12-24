@@ -38,6 +38,7 @@ class ReplyController extends Controller
             $gasStationIsOpen = $gasStation->is_open ? "true" : "false";
             $replyIsOpen = $reply->is_open ? "true" : "false";
 
+            $gasStation->is_active = true;
             $gasStation->is_open = $reply->is_open;
             $gasStation->save();
 
