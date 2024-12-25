@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
 
         $schedule->command('refresh:gas-stations')->dailyAt('00:00');
+        $schedule->command('refresh:comments')->dailyAt('00:00');
     }
 
     /**

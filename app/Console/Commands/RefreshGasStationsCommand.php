@@ -14,11 +14,12 @@ class RefreshGasStationsCommand extends Command
 
     public function handle(): void
     {
-        Log::channel('telegram')->info("TEST");
+        GasStation::query()->update([
+            'is_active' => false,
+            'is_open' => false,
+        ]);
 
-//        GasStation::update([
-//            'is_active' => false,
-//            'is_open' => false,
-//        ]);
+        $this->info("Barlıq metan stanciyalar default jaǵdayǵa keltiriledi.");
+        Log::channel('telegram')->info("Barlıq metan stanciyalar default jaǵdayǵa keltiriledi.");
     }
 }
