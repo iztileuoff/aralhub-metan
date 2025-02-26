@@ -15,4 +15,5 @@ use SergiX44\Nutgram\Nutgram;
 
 $bot->onCommand('start', function (Nutgram $bot) {
     $bot->sendMessage('Hello, world!');
+    Log::channel('telegram')->info("Telegram chat id: " . $bot->chatId());
 })->description('The start command!');
